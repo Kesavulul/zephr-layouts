@@ -473,5 +473,12 @@
           if(b != '')
             elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
         });
+        (() => {
+          let bodyElem = document.querySelector("body");
+          if(bodyElem){
+            let paywallModal = document.querySelector(".reg-overlay");
+            document.querySelector("body").appendChild(paywallModal);
+          }
+        })();
       </script>
     </div>
