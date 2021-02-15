@@ -486,6 +486,7 @@
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                 })
                 jQuery(".reg-dialog.login").find(".reg-close").die().live("click",function(e){
+                    console.log("HEEERE");
                     jQuery("body").append(paywallModal);
                 })
             })();
