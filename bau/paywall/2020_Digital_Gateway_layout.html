@@ -419,7 +419,7 @@
             </div>
             <div class="da-body">
                 <h2 data-break="{{tagline-break}}">{{tagline}}</h2>
-                <p class="da-urgency">{{urgency}}</p>
+                <p class="da-urgency">{{urgency-text}}</p>
                 <div class="da-offer">
                 <div class="da-image pull-left">
                     <img class="da-device-image" src="//www.{{market-domain}}.com/subscriptions/modal-{{campaign-code}}/img/device-uda.{{image-extension}}" alt="{{uda-caption}} " style="width: 163px;">
@@ -485,10 +485,10 @@
                 jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
                 jQuery(".pw-btn.small").unbind().bind("click",function(e){
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
-                    jQuery(".reg-dialog.login").find(".reg-close").off().on("click",function(e){
-                        console.log("HEEERE");
-                        jQuery("body").append(paywallModal);
-                    })
+                })
+                jQuery(".reg-dialog.login").find(".reg-close").off().on("click",function(e){
+                    console.log("HEEERE");
+                    jQuery("body").append(paywallModal);
                 })
                
             })();
