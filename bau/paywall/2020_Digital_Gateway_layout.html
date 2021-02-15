@@ -497,10 +497,12 @@
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                 })
                 $('body').unbind().on('click', '.reg-close', function(e) {
-                    e.preventDefault();
+                    e.stopImmediatePropagation();
                     console.log("HEEERE");
                     jQuery("body").append(paywallModal);
-                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
                 });
             })();
             
