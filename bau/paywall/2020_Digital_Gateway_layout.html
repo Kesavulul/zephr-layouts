@@ -35,7 +35,7 @@
 
     /* TEMPORARY - hide close button */
     .meter-modal .reg-close {
-    display: none;
+     display: none;
     }
 
     .meter-modal mark {
@@ -480,18 +480,18 @@
             </div>
             </div>
             <script>
-            ((window.trb || (trb = {})).metering || (trb.metering = {})).push(function(reg) {
-            var break_code = '<br class="m_show" style="display:none;">';
-                document.querySelectorAll('.meter-modal [data-break]').forEach(function(elem) {
-                    //  insert `break_code` after `data-break`
-                    var b = elem.getAttribute('data-break');
-                    if(b != '')
-                    elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
-                });
-            });
             (() => {
                 let paywallModal = jQuery("#reg-overlay");
                 jQuery("body").append(paywallModal);
+                ((window.trb || (trb = {})).metering || (trb.metering = {})).push(function(reg) {
+                    var break_code = '<br class="m_show" style="display:none;">';
+                    document.querySelectorAll('.meter-modal [data-break]').forEach(function(elem) {
+                        //  insert `break_code` after `data-break`
+                        var b = elem.getAttribute('data-break');
+                        if(b != '')
+                        elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
+                    });
+                });
                 jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
                 jQuery(".pw-btn.small").unbind().bind("click",function(e){
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
