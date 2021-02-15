@@ -499,7 +499,8 @@
                 $('body').unbind().on('click', '.reg-close', function(e) {
                     e.stopImmediatePropagation();
                     console.log("HEEERE");
-                    jQuery("body").append(paywallModal);
+                    jQuery("#reg-overlay").addClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
+                    //jQuery("body").append(paywallModal);
                     e.preventDefault();
                     e.stopPropagation();
                     return false;
