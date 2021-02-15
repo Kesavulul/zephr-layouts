@@ -485,11 +485,12 @@
                 jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
                 jQuery(".pw-btn.small").unbind().bind("click",function(e){
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
+                    jQuery(".reg-dialog.login").find(".reg-close").off().on("click",function(e){
+                        console.log("HEEERE");
+                        jQuery("body").append(paywallModal);
+                    })
                 })
-                jQuery(".reg-dialog.login").find(".reg-close").off().on("click",function(e){
-                    console.log("HEEERE");
-                    jQuery("body").append(paywallModal);
-                })
+               
             })();
             
             </script>
