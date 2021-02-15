@@ -480,16 +480,16 @@
                 });
             });
             (() => {
-                let bodyElem = document.querySelector("body");
-                if(bodyElem){
-                    let paywallModal = document.querySelector("#reg-overlay");
-                    document.querySelector("body").appendChild(paywallModal);
-                }
+                let paywallModal = jQuery("#reg-overlay");
+                jQuery("body").append(paywallModal);
+                jQuery(".pw-btn.small").unbind().bind("click",function(e){
+                    jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
+                })
+                jQuery(".reg-dialog.login").find(".reg-close").die().live("click",function(e){
+                    jQuery("body").append(paywallModal);
+                })
             })();
-            jQuery(".pw-btn.small").click(function(e){
-                console.log("Hi Inside Click Event");
-                jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
-            })
+            
             </script>
         </div>
     </div>
