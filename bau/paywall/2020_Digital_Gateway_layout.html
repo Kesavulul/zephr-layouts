@@ -482,6 +482,7 @@
             (() => {
                 let paywallModal = jQuery("#reg-overlay");
                 jQuery("body").append(paywallModal);
+                jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
                 jQuery(".pw-btn.small").unbind().bind("click",function(e){
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                 })
