@@ -486,6 +486,10 @@
                     document.querySelector("body").appendChild(paywallModal);
                 }
             })();
+            jQuery(".pw-btn.small").click(function(e){
+                console.log("Hi Inside Click Event");
+                jQuery(e).parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
+            })
             </script>
         </div>
     </div>
