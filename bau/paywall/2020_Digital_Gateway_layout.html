@@ -1,4 +1,36 @@
 <style>
+    .reg-dialog * {
+      box-sizing:inherit;
+      font:inherit;
+    }
+    
+    #reg-overlay {
+      background: rgba(0,0,0,.5);
+      height: 100%;
+      position: fixed;
+      width: 100%;
+      z-index: 2147483642;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: block!important;
+      contain: strict;
+    }
+    
+    #reg-overlay:after {
+      content: "";
+      height: 100%;
+    }
+    
+    #reg-overlay:after, .reg-dialog {
+      display: inline-block;
+      vertical-align: middle;  
+    }
+    
+    #reg-overlay, .panel .reg-explain, .panel .reg-register, .panel .reg-sso, .panel .reg-tos {
+      text-align:center;
+    }
     /* TEMPORARY - hide close button */
     .meter-modal .reg-close {
     display: none;
@@ -438,12 +470,12 @@
             <script>
             ((window.trb || (trb = {})).metering || (trb.metering = {})).push(function(reg) {
             var break_code = '<br class="m_show" style="display:none;">';
-            document.querySelectorAll('.meter-modal [data-break]').forEach(function(elem) {
-                //  insert `break_code` after `data-break`
-                var b = elem.getAttribute('data-break');
-                if(b != '')
-                elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
-            });
+                document.querySelectorAll('.meter-modal [data-break]').forEach(function(elem) {
+                    //  insert `break_code` after `data-break`
+                    var b = elem.getAttribute('data-break');
+                    if(b != '')
+                    elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
+                });
             });
             </script>
         </div>
