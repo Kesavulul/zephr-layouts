@@ -496,11 +496,10 @@
                 jQuery(".pw-btn.small").unbind().bind("click",function(e){
                     jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                 })
-                jQuery(".reg-dialog.login").find(".reg-close").off().on("click",function(e){
+                $('body').on('click', '.reg-close', function() {
                     console.log("HEEERE");
                     jQuery("body").append(paywallModal);
-                })
-               
+                });
             })();
             
             </script>
