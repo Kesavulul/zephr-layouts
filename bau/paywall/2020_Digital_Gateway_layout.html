@@ -482,32 +482,31 @@
             </div>
             </div>
             <script>
-            ((window.trb || (trb = {})).metering || (trb.metering = {})).push(function(reg) {
-            var break_code = '<br class="m_show" style="display:none;">';
-                document.querySelectorAll('.meter-modal [data-break]').forEach(function(elem) {
-                    //  insert `break_code` after `data-break`
-                    var b = elem.getAttribute('data-break');
-                    if(b != '' && !jQuery(elem).find("br").length)
-                    elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
+                ((window.trb || (trb = {})).metering || (trb.metering = {})).push(function(reg) {
+                var break_code = '<br class="m_show" style="display:none;">';
+                    document.querySelectorAll('.meter-modal [data-break]').forEach(function(elem) {
+                        //  insert `break_code` after `data-break`
+                        var b = elem.getAttribute('data-break');
+                        if(b != '' && !jQuery(elem).find("br").length)
+                        elem.innerHTML = elem.innerHTML.replace(new RegExp(b, 'ig'), b + break_code);
+                    });
                 });
-            });
-            (() => {
-                let paywallModal = jQuery("#reg-overlay");
-                jQuery("body").append(paywallModal);
-                jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
-                jQuery(".pw-btn.small").unbind().bind("click",function(e){
-                    jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
-                })
-                $('body').unbind().on('click', '.reg-close', function(e) {
-                    e.preventDefault();
-                    console.log("I am Here");
-                    jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
-                    jQuery("#reg-overlay").find(".reg-dialog.login").remove();
-                    e.stopImmediatePropagation();
-                    return false;
-                });
-            })();
-            
+                (() => {
+                    let paywallModal = jQuery("#reg-overlay");
+                    jQuery("body").append(paywallModal);
+                    jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
+                    jQuery(".pw-btn.small").unbind().bind("click",function(e){
+                        jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
+                    })
+                    $('body').unbind().on('click', '.reg-close', function(e) {
+                        e.preventDefault();
+                        console.log("I am Here");
+                        jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
+                        jQuery("#reg-overlay").find(".reg-dialog.login").remove();
+                        e.stopImmediatePropagation();
+                        return false;
+                    });
+                })();
             </script>
         </div>
     </div>
