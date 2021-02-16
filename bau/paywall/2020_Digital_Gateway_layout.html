@@ -3,7 +3,15 @@
       box-sizing:inherit;
       font:inherit;
     }
-    
+    .reg-dialog {
+      box-sizing: border-box;
+      font: 14px Georgia,Arial,Helvetica,sans-serif;
+      text-align: left;
+      width: 355px;
+      background-color: #fff;
+      color: #333;
+      contain: style layout;
+    }
     #reg-overlay {
       background: rgba(0,0,0,.5);
       height: 100%;
@@ -498,7 +506,7 @@
                     jQuery(".pw-btn.small").unbind().bind("click",function(e){
                         jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                     })
-                    $('body').unbind().on('click', '.reg-close', function(e) {
+                    $('body').unbind().on('click', '.reg-dialog.login .reg-close', function(e) {
                         e.preventDefault();
                         console.log("I am Here");
                         jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
