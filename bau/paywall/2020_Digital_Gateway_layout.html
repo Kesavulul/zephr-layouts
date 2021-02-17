@@ -503,16 +503,16 @@
                     let paywallModal = jQuery("#reg-overlay");
                     jQuery("body").append(paywallModal);
                     jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
-                    jQuery(".pw-btn.small").unbind().bind("click",function(e){
+                    jQuery(".pw-btn.small").bind("click",function(e){
                         jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                     })
-                    $('body').unbind().on('click', '.reg-dialog.login .reg-close', function(e) {
+                    $('body').on('click', '.reg-close,.reg-cancel', function(e) {
                         setTimeout(function(){
                             console.log("I am Here");
                             jQuery("body").append(paywallModal);
-                            jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
-                            jQuery("#reg-overlay").find(".reg-dialog.login").remove();
-                        },1000);
+                            //jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
+                            //jQuery("#reg-overlay").find(".reg-dialog.login").remove();
+                        },500);
                     });
                 })();
             </script>
