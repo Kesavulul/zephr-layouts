@@ -507,14 +507,12 @@
                         jQuery(".pw-btn.small").parents("#reg-overlay").find(".reg-dialog.meter-modal").addClass("closed");
                     })
                     $('body').unbind().on('click', '.reg-dialog.login .reg-close', function(e) {
-                        e.preventDefault();
-                        e.stopImmediatePropagation();
-                        e.stopPropagation();
-                        console.log("I am Here");
-                        jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
-                        jQuery("#reg-overlay").find(".reg-dialog.login").remove();
-                        
-                        return false;
+                        setTimeout(function(){
+                            console.log("I am Here");
+                            jQuery("body").append(paywallModal);
+                            jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
+                            jQuery("#reg-overlay").find(".reg-dialog.login").remove();
+                        },1000);
                     });
                 })();
             </script>
