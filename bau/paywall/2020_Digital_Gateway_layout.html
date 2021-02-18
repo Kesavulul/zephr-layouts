@@ -503,10 +503,10 @@
                     let paywallModal = jQuery("#reg-overlay");
                     jQuery("body").append(paywallModal);
                     jQuery("html").attr("data-dss-meterup","").attr("data-ssor-modalup","meter-modal");
-                    jQuery(".pw-btn.small").off().on("click",function(e){
+                    jQuery(".pw-btn.small").off('click').on("click",function(e){
                         jQuery(".reg-dialog.meter-modal").addClass("closed");
                     })
-                    $('body').off().on('click', '.reg-close,.reg-cancel', function(e) {
+                    $('body').off('click').on('click', '.reg-close,.reg-cancel', function(e) {
                         setTimeout(function(){
                             jQuery("body").append(paywallModal);
                             jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
