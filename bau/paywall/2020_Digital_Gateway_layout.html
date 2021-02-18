@@ -508,10 +508,8 @@
                     })
                     $('body').off().on('click', '.reg-close,.reg-cancel', function(e) {
                         setTimeout(function(){
-                            console.log("I am Here");
                             jQuery("body").append(paywallModal);
                             jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
-                            //jQuery("#reg-overlay").find(".reg-dialog.login").remove();
                         },500);
                     });
                 })();
