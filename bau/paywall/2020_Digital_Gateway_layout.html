@@ -506,7 +506,7 @@
                     jQuery(".da-login-link").off('click').on("click",function(e){
                         jQuery(".reg-dialog.meter-modal").addClass("closed");
                     })
-                    $('body').off('click').on('click', '.reg-close,.reg-cancel', function(e) {
+                    $('#reg-overlay').off('click').on('click', '.reg-close,.reg-cancel', function(e) {
                         setTimeout(function(){
                             jQuery("body").append(paywallModal);
                             jQuery("#reg-overlay").removeClass("panel").find(".reg-dialog.meter-modal").removeClass("closed");
